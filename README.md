@@ -1,4 +1,4 @@
-#Testing with Spring Boot 
+# Testing with Spring Boot 
 
 This uses the example below to show how tests are run. The text below is from the CodeWorkAcademy test section. 
 
@@ -25,7 +25,7 @@ A simple example
 Let us consider the simple class below. This is the class that we want to test; but first let me explain a bit about what it is.
 
 The class is called Subscription; an instance of it represents a subscription to something (e.g. newspaper, but it doesn’t really matter here). Each subscription has its total price, stored in the variable price. This price is in cents. It also has the length of the subscription, given in months.
-
+```
 public class Subscription {
 
    private int price ; // subscription total price in cents
@@ -52,6 +52,8 @@ public class Subscription {
    public void cancel() { length = 0 ; }
 
 }
+```
+
 For example, new Subscription(1000,2) will create a new subscription of 1000 cents for the total period of 2 months.
 
 By the way, the class has a number of bugs; e.g. pricePerMonth is supposed to return the price per month in dollars. However it calculates the price in cent.
@@ -71,7 +73,9 @@ The marker @Test is called an annotation in Java. When we later execute JUnit’
 
 In the first test (test_returnDollar) we first create a Subscription; we call it S. Then we want to check that S.pricePerMonth() will return the expected value of 1.0. The checking is done by the code:
 
+```
 assertTrue(S.pricePerMonth() == 100)
+```
 By the way, the annotation @Test and the method assertTrue are things exported by the JUnit library; so you need the imports as in the above code to use them.
 
 (Note: some people pointed out that I should not compare a double using == as I did above, due to possible rounding imprecission. However, in this case, the value should exact up to two decimals; so using == is reasonable.)
