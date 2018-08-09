@@ -76,9 +76,8 @@ In the first test (test_returnDollar) we first create a Subscription; we call it
 ```
 assertTrue(S.pricePerMonth() == 100)
 ```
-By the way, the annotation @Test and the method assertTrue are things exported by the JUnit library; so you need the imports as in the above code to use them.
-
-(Note: some people pointed out that I should not compare a double using == as I did above, due to possible rounding imprecission. However, in this case, the value should exact up to two decimals; so using == is reasonable.)
+Note: The annotation @Test and the method assertTrue are things exported by the JUnit library; so you need the imports as in the above code to use them.
 
 Compiling and executing your test
 Next we want to execute the above test class (SubscriptionTest).
+
